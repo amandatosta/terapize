@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Questionário</title>
+  <style>
+    /* Estilos CSS */
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Questionário</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <h3>1. Tento sempre mostrar ao outro que tenho razão e tento ganhar a discussão</h3>
+      <input type="radio" name="pergunta1" value="1"> 1
+      <input type="radio" name="pergunta1" value="2"> 2
+      <input type="radio" name="pergunta1" value="3"> 3
+      <input type="radio" name="pergunta1" value="4"> 4
+      <input type="radio" name="pergunta1" value="5"> 5
+    </div>
+
+    <div class="question">
+      <h3>2. Prefiro evitar a pessoa até que o problema se resolva</h3>
+      <input type="radio" name="pergunta2" value="1"> 1
+      <input type="radio" name="pergunta2" value="2"> 2
+      <input type="radio" name="pergunta2" value="3"> 3
+      <input type="radio" name="pergunta2" value="4"> 4
+      <input type="radio" name="pergunta2" value="5"> 5
+    </div>
+
+    <!-- Adicione as perguntas restantes seguindo a estrutura acima -->
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    // JavaScript para processar o formulário
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita o envio do formulário
+
+      // Obter as respostas do usuário
+      var respostaPergunta1 = parseInt(document.querySelector('input[name="pergunta1"]:checked').value);
+      var respostaPergunta2 = parseInt(document.querySelector('input[name="pergunta2"]:checked').value);
+
+      // Adicione as perguntas restantes aqui e atribua as respostas a variáveis
+
+      // Calcular a pontuação total para cada estilo
+      var confrontacao = respostaPergunta1 + respostaPergunta3 + respostaPergunta7 + respostaPergunta10 + respostaPergunta15 + respostaPergunta18;
+      var evitacao = respostaPergunta2 + respostaPergunta6 + respostaPergunta9 + respostaPergunta20 + respostaPergunta26 + respostaPergunta29;
+      var compromisso = respostaPergunta14 + respostaPergunta16 + respostaPergunta19 + respostaPergunta21 + respostaPergunta23 + respostaPergunta30;
+      var cedencia = respostaPergunta4 + respostaPergunta8 + respostaPergunta13 + respostaPergunta11 + respostaPergunta17 + respostaPergunta25;
+      var resolucao = respostaPergunta5 + respostaPergunta12 + respostaPergunta22 + respostaPergunta24 + respostaPergunta27 + respostaPergunta28;
+
+      // Exibir os resultados
+      alert("Estilo de confrontação: " + confrontacao + "\nEstilo de evitação: " + evitacao + "\nEstilo de compromisso: " + compromisso + "\nEstilo de cedência: " + cedencia + "\nEstilo de resolução de problemas/colaboração: " + resolucao);
+
+      // Limpar as respostas selecionadas
+      document.getElementById("quizForm").reset();
+    });
+  </script>
+</body>
+</html>
